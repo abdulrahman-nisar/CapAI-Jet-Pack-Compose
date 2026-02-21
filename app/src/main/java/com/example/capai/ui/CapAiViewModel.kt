@@ -27,15 +27,19 @@ class CapAiViewModel @Inject constructor(
     private val _historyList = MutableStateFlow<List<CapAI>>(emptyList())
     val historyList = _historyList.asStateFlow()
 
+    private var _hasCaptionBeenRequested = false
     init {
        getHistoryList()
     }
 
     fun prepareForCaptionGeneration() {
         _result.value = CaptionResult(isGenerating = true)
+        _hasCaptionBeenRequested = false
     }
 
     fun getImageCaption(context: Context, length: Length) {
+        if (_hasCaptionBeenRequested) return
+        _hasCaptionBeenRequested = true
         viewModelScope.launch {
             _result.value = _result.value.copy(isGenerating = true)
             val caption = _getImageCaptionUseCase(imageUri.value, length, context)

@@ -48,6 +48,7 @@ import com.example.capai.R
 import com.example.capai.domain.model.Length
 import com.example.capai.ui.CapAiViewModel
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.saveable.rememberSaveable
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -60,8 +61,8 @@ fun CaptionPreferencesScreen(
         onBackArrowClick()
     }
 
-    var selectedIndex by remember { mutableIntStateOf(0) }
-    var selectedLength by remember { mutableStateOf(Length.SHORT) }
+    var selectedIndex by rememberSaveable{ mutableIntStateOf(0) }
+    var selectedLength by rememberSaveable{ mutableStateOf(Length.SHORT) }
     val options = listOf("Short", "Long")
 
     val imageHeight = 490.dp
