@@ -206,10 +206,11 @@ The project uses Gradle with Kotlin DSL. No additional configuration should be n
 
 ---
 
-## 🎨 Screenshots
+## Demo
 
-<!-- Add screenshots here when available -->
+[<!-- Add screenshots here when available -->
 *Screenshots coming soon*
+](https://github.com/user-attachments/assets/912ba610-3b2d-465f-9858-9cfe49b6aaa3)
 
 ---
 
