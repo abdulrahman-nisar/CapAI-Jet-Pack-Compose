@@ -17,7 +17,9 @@ sealed interface Route : NavKey{
     @Serializable
     data class DetailsScreen(val selectedLength: Length) : Route, NavKey
     @Serializable
-    data class AdMobInterstitialScreen(val selectedLength: Length) : Route, NavKey
+    data class AdMobRewardedScreen(val selectedLength: Length) : Route, NavKey
+    @Serializable
+    data class AdMobInterstitialScreen(val itemIndex: Int) : Route, NavKey
     @Serializable
     data class HomeDetailsScreen(val itemIndex: Int) : Route, NavKey
 }

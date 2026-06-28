@@ -42,20 +42,6 @@ import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 import kotlinx.coroutines.delay
 import kotlin.math.sin
 
-/**
- * Caption-generation loading screen — animated typewriter effect.
- *
- * Pieces, matching the approved preview:
- *  1. Typewriter text that types out each phrase, holds, fades out,
- *     then fades in the next phrase (smooth, not a hard delete/retype).
- *  2. A glowing cursor whose opacity + blur pulse continuously via a
- *     sine wave (not a hard on/off blink).
- *  3. A progress "trace" bar beneath the text that fills as the
- *     current phrase types, then resets for the next phrase.
- *  4. A small sparkle icon that pops/rotates each time a phrase
- *     finishes typing, with an "AI is writing" label.
- */
-
 private val AccentPurple = Color(0xFF6F5CE0)
 
 private const val TYPE_DELAY_MS = 45L
@@ -162,10 +148,6 @@ fun TypewriterCaptionLoader(
     }
 }
 
-/**
- * Full caption-generation loading screen using the typewriter loader.
- * Drop this in as the screen content while captions are being generated.
- */
 @Composable
 fun CaptionGenerationLoadingScreen(
     modifier: Modifier = Modifier
@@ -186,8 +168,3 @@ fun CaptionGenerationLoadingScreen(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-private fun CaptionGenerationLoadingScreenPreview() {
-    CaptionGenerationLoadingScreen()
-}

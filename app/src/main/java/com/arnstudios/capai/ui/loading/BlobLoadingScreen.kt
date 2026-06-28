@@ -32,20 +32,6 @@ import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 import kotlin.math.cos
 import kotlin.math.sin
 
-/**
- * AI-thinking pulsing gradient blob loader.
- *
- * - Organic blob shape with a noise-displaced edge (8 control points,
- *   quadratic-curve smoothed) instead of a plain circle.
- * - Radial gradient core (light purple -> deep purple).
- * - Two breathing halo rings behind the blob for ambient glow.
- * - Speed matches the "sped up" preview: full morph/breathe cycle
- *   roughly every ~1.1s for an energetic "actively thinking" feel.
- *
- * Pure Canvas drawing — no images/gifs, fully theme-able via the
- * colors passed in.
- */
-
 private const val POINTS = 8
 private const val BASE_RADIUS_DP = 30f
 
@@ -117,12 +103,6 @@ private fun DrawScope.drawMorphingBlob(
     drawPath(path = path, brush = brush)
 }
 
-/**
- * Builds an organic blob outline: POINTS points placed around a circle,
- * each radius perturbed by layered sine/cosine noise (mirrors the JS
- * preview's blobPath()), then smoothed with quadratic Bezier segments
- * through midpoints so the edge has no hard corners.
- */
 private fun buildBlobPath(
     center: Offset,
     baseRadius: Float,
@@ -154,10 +134,7 @@ private fun buildBlobPath(
     }
 }
 
-/**
- * Full loading screen wrapper — drop this in as your generation/loading
- * screen content. Pass an optional label that updates as work progresses.
- */
+
 @Composable
 fun BlobLoadingScreen(
     modifier: Modifier = Modifier,
@@ -180,10 +157,4 @@ fun BlobLoadingScreen(
             )
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun BlobLoadingScreenPreview() {
-    BlobLoadingScreen()
 }

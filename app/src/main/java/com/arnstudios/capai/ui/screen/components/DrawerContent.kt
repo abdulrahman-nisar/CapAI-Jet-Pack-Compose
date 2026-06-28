@@ -34,8 +34,6 @@ import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 
 @Composable
 fun DrawerContent() {
-    val context = LocalContext.current
-
     Column(
         modifier = Modifier
             .fillMaxHeight()

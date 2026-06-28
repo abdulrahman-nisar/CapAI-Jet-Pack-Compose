@@ -3,26 +3,24 @@ package com.arnstudios.capai.ui.navigation
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.ContentTransform
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import com.arnstudios.capai.ui.CapAiViewModel
 import com.arnstudios.capai.ui.screen.AdMobInterstitialScreen
+import com.arnstudios.capai.ui.screen.AdMobRewardedScreen
 import com.arnstudios.capai.ui.screen.CaptionPreferencesScreen
 import com.arnstudios.capai.ui.screen.DetailsScreen
 import com.arnstudios.capai.ui.screen.HomeDetailsScreen
 import com.arnstudios.capai.ui.screen.HomeScreen
 import com.arnstudios.capai.ui.screen.OnboardingScreen
 import com.arnstudios.capai.ui.screen.SelectImageScreen
-import androidx.compose.runtime.collectAsState
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
-
 
 @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 @Composable
@@ -62,6 +60,15 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                         backStack.add(Route.SelectImageScreen)
                     },
                     onHistoryItemClick = { index ->
+                        backStack.add(Route.AdMobInterstitialScreen(index))
+                    }
+                )
+            }
+            entry<Route.AdMobInterstitialScreen> { route ->
+                AdMobInterstitialScreen(
+                    itemIndex = route.itemIndex,
+                    onAdDismissed = { index ->
+                        backStack.removeLast()
                         backStack.add(Route.HomeDetailsScreen(index))
                     }
                 )
@@ -95,12 +102,12 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                         backStack.removeLast()
                     },
                     onGenerateCaptionClick = {
-                        backStack.add(Route.AdMobInterstitialScreen(it))
+                        backStack.add(Route.AdMobRewardedScreen(it))
                     }
                 )
             }
-            entry <Route.AdMobInterstitialScreen> { route ->
-                AdMobInterstitialScreen(
+            entry <Route.AdMobRewardedScreen> { route ->
+                AdMobRewardedScreen(
                     selectedLength = route.selectedLength,
                     onAdDismissed = { length ->
                         backStack.removeLast()
@@ -122,9 +129,6 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                     }
                 )
             }
-
         }
-
     )
-
 }

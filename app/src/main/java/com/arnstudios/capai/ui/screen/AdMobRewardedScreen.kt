@@ -11,65 +11,70 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import com.arnstudios.capai.domain.model.Length
 import com.arnstudios.capai.ui.loading.BlobLoadingScreen
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 
 @Composable
-fun AdMobInterstitialScreen(
-    itemIndex: Int,
-    onAdDismissed: (Int) -> Unit
+fun AdMobRewardedScreen(
+    selectedLength: Length,
+    onAdDismissed: (Length) -> Unit
 ) {
     val context = LocalContext.current
     val activity = context as? Activity
+
+    val loadingState = remember { mutableStateOf(true) }
+
 
     BackHandler {
         // Do nothing to prevent skipping the ad screen
     }
 
-    val loadingState = remember { mutableStateOf(true) }
-
-    if(loadingState.value){
+    if(loadingState.value) {
         Box(
             modifier = Modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
-            BlobLoadingScreen(label = "Loading Ad...")
+            BlobLoadingScreen(label = "Loading Reward Ad...")
         }
     }
 
     LaunchedEffect(Unit) {
         val adRequest = AdRequest.Builder().build()
-        InterstitialAd.load(
+        RewardedAd.load(
             context,
-            "ca-app-pub-3940256099942544/1033173712", // Test Interstitial Ad ID
+            "ca-app-pub-3940256099942544/5224354917", // Test Reward Ad ID
             adRequest,
-            object : InterstitialAdLoadCallback() {
+            object : RewardedAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
-                    onAdDismissed(itemIndex)
+                    onAdDismissed(selectedLength)
                 }
 
-                override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                    interstitialAd.fullScreenContentCallback = object : FullScreenContentCallback() {
+                override fun onAdLoaded(rewardedAd: RewardedAd) {
+                    rewardedAd.fullScreenContentCallback = object : FullScreenContentCallback() {
                         override fun onAdDismissedFullScreenContent() {
-                            onAdDismissed(itemIndex)
+                            onAdDismissed(selectedLength)
                         }
 
                         override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-                            onAdDismissed(itemIndex)
+                            onAdDismissed(selectedLength)
                         }
                     }
                     activity?.let {
                         loadingState.value = false
-                        interstitialAd.show(it)
-                    } ?: onAdDismissed(itemIndex)
+                        rewardedAd.show(it) { rewardItem ->
+                            // User earned the reward
+                        }
+                    } ?: onAdDismissed(selectedLength)
                 }
             }
         )
     }
+
 
 }

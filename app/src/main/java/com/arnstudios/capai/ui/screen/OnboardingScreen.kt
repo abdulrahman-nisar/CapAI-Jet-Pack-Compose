@@ -1,16 +1,7 @@
 package com.arnstudios.capai.ui.screen
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
@@ -34,7 +25,7 @@ import kotlinx.coroutines.launch
 fun OnboardingScreen(
     onFinish: () -> Unit
 ) {
-    val pagerState = rememberPagerState(pageCount = { 3 })
+    val pagerState = rememberPagerState { 3 }
     val scope = rememberCoroutineScope()
 
     Box(
