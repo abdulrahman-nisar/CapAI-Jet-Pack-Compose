@@ -1,4 +1,4 @@
-package com.example.capai.domain.model
+package com.arnstudios.capai.domain.model
 
 enum class Length {
     SHORT,
