@@ -1,4 +1,4 @@
-package com.example.capai.ui.navigation
+package com.arnstudios.capai.ui.navigation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -9,36 +9,52 @@ import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.example.capai.ui.CapAiViewModel
-import com.example.capai.ui.screen.CaptionPreferencesScreen
-import com.example.capai.ui.screen.DetailsScreen
-import com.example.capai.ui.screen.HomeDetailsScreen
-import com.example.capai.ui.screen.HomeScreen
-import com.example.capai.ui.screen.SelectImageScreen
+import com.arnstudios.capai.ui.CapAiViewModel
+import com.arnstudios.capai.ui.screen.AdMobInterstitialScreen
+import com.arnstudios.capai.ui.screen.CaptionPreferencesScreen
+import com.arnstudios.capai.ui.screen.DetailsScreen
+import com.arnstudios.capai.ui.screen.HomeDetailsScreen
+import com.arnstudios.capai.ui.screen.HomeScreen
+import com.arnstudios.capai.ui.screen.OnboardingScreen
+import com.arnstudios.capai.ui.screen.SelectImageScreen
 import androidx.compose.runtime.collectAsState
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 
 
 @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 @Composable
 fun NavigationRoot(viewModel: CapAiViewModel) {
 
-    val backStack = rememberNavBackStack(Route.HomeScreen)
+    val startRoute = if (viewModel.isOnboardingCompleted) Route.HomeScreen else Route.OnboardingScreen
+    val backStack = rememberNavBackStack(startRoute)
 
     NavDisplay(
         backStack,
         transitionSpec = {
             ContentTransform(
-                targetContentEnter = EnterTransition.None,
-                initialContentExit = ExitTransition.None
+                targetContentEnter = slideInHorizontally { it } + fadeIn(),
+                initialContentExit = slideOutHorizontally { -it } + fadeOut()
             )
         },
         popTransitionSpec = {
             ContentTransform(
-                targetContentEnter = EnterTransition.None,
-                initialContentExit = ExitTransition.None
+                targetContentEnter = slideInHorizontally { -it } + fadeIn(),
+                initialContentExit = slideOutHorizontally { it } + fadeOut()
             )
         },
         entryProvider = entryProvider{
+            entry<Route.OnboardingScreen> {
+                OnboardingScreen(
+                    onFinish = {
+                        viewModel.setOnboardingCompleted()
+                        backStack.removeLast()
+                        backStack.add(Route.HomeScreen)
+                    }
+                )
+            }
             entry<Route.HomeScreen> {
                 HomeScreen(
                     viewModel = viewModel,
@@ -79,7 +95,16 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                         backStack.removeLast()
                     },
                     onGenerateCaptionClick = {
-                        backStack.add(Route.DetailsScreen(it))
+                        backStack.add(Route.AdMobInterstitialScreen(it))
+                    }
+                )
+            }
+            entry <Route.AdMobInterstitialScreen> { route ->
+                AdMobInterstitialScreen(
+                    selectedLength = route.selectedLength,
+                    onAdDismissed = { length ->
+                        backStack.removeLast()
+                        backStack.add(Route.DetailsScreen(length))
                     }
                 )
             }

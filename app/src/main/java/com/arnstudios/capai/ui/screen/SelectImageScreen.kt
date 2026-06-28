@@ -1,34 +1,20 @@
-package com.example.capai.ui.screen
+package com.arnstudios.capai.ui.screen
 
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -36,8 +22,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.capai.R
-import com.example.capai.ui.CapAiViewModel
+import com.arnstudios.capai.R
+import com.arnstudios.capai.ui.CapAiViewModel
+import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -79,11 +66,11 @@ fun SelectImageScreen(
                             .fillMaxWidth(),
                         textAlign = TextAlign.Center,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 24.sp
+                        fontSize = 20.sp
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF1948a6),
+                    containerColor = Color(0xFF6366F1),
                     titleContentColor = Color.White
                 ),
                 navigationIcon = {
@@ -99,6 +86,9 @@ fun SelectImageScreen(
                                 .size(30.dp)
                         )
                     }
+                },
+                actions = {
+                    Spacer(modifier = Modifier.size(48.dp))
                 }
             )
         }
@@ -106,45 +96,74 @@ fun SelectImageScreen(
         Column(
             modifier = Modifier
                 .padding(innerpadding)
-                .fillMaxHeight(),
+                .fillMaxSize()
+                .background(ScreenBackgroundGradient),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.upload),
-                contentDescription = "No Image Selected",
-                modifier = Modifier.size(200.dp)
-            )
-            Spacer(
-                modifier = Modifier.height(20.dp)
-            )
-            Text("No image selected. Select an image by tapping the button below.",
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center,
+            Card(
                 modifier = Modifier
-                    .padding(horizontal = 16.dp)
+                    .size(280.dp)
+                    .padding(16.dp),
+                shape = RoundedCornerShape(24.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+                colors = CardDefaults.cardColors(containerColor = Color.White)
+            ) {
+                Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+                    Image(
+                        painter = painterResource(id = R.drawable.upload),
+                        contentDescription = "No Image Selected",
+                        modifier = Modifier.size(150.dp)
+                    )
+                }
+            }
+            
+            Spacer(modifier = Modifier.height(32.dp))
+            
+            Text(
+                text = "Capture Your Moment",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF6366F1)
             )
-            Spacer(
-                modifier = Modifier.height(20.dp)
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Text(
+                text = "Select an image to generate stunning AI captions automatically.",
+                fontSize = 16.sp,
+                textAlign = TextAlign.Center,
+                color = Color.Gray,
+                modifier = Modifier.padding(horizontal = 32.dp)
             )
-            Button(onClick = {
-                viewModel.imageUri.value = null
-                pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
-            },
-                colors = ButtonColors(
-                    Color(0xFF1948a6),
-                    contentColor = Color.White,
-                    disabledContentColor = Color.White,
-                    disabledContainerColor = Color(0xFF1948a6)
-                ))
-              {
-                Text(
-                    text = "Select Image",
-                    fontSize = 20.sp
+            
+            Spacer(modifier = Modifier.height(48.dp))
+            
+            Button(
+                onClick = {
+                    viewModel.imageUri.value = null
+                    pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 32.dp)
+                    .height(56.dp),
+                shape = RoundedCornerShape(16.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF6366F1),
+                    contentColor = Color.White
                 )
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(painterResource(R.drawable.upload), contentDescription = null, modifier = Modifier.size(24.dp))
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = "Choose from Gallery",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
             }
         }
     }
 }
-
-

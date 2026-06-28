@@ -1,11 +1,13 @@
-package com.example.capai.ui.navigation
+package com.arnstudios.capai.ui.navigation
 
 import androidx.navigation3.runtime.NavKey
-import com.example.capai.domain.model.Length
+import com.arnstudios.capai.domain.model.Length
 import kotlinx.serialization.Serializable
 
 @Serializable
 sealed interface Route : NavKey{
+    @Serializable
+    data object OnboardingScreen : Route, NavKey
     @Serializable
     data object HomeScreen : Route, NavKey
     @Serializable
@@ -14,6 +16,8 @@ sealed interface Route : NavKey{
     data object CaptionPreferencesScreen : Route, NavKey
     @Serializable
     data class DetailsScreen(val selectedLength: Length) : Route, NavKey
+    @Serializable
+    data class AdMobInterstitialScreen(val selectedLength: Length) : Route, NavKey
     @Serializable
     data class HomeDetailsScreen(val itemIndex: Int) : Route, NavKey
 }
