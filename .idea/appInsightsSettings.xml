@@ -3,13 +3,27 @@
   <component name="AppInsightsSettings">
     <option name="tabSettings">
       <map>
+        <entry key="Android vitals">
+          <value>
+            <InsightsFilterSettings>
+              <option name="connection">
+                <ConnectionSetting>
+                  <option name="appId" value="com.arnstudios.capai" />
+                </ConnectionSetting>
+              </option>
+              <option name="signal" value="SIGNAL_UNSPECIFIED" />
+              <option name="timeIntervalDays" value="SEVEN_DAYS" />
+              <option name="visibilityType" value="ALL" />
+            </InsightsFilterSettings>
+          </value>
+        </entry>
         <entry key="Firebase Crashlytics">
           <value>
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.example.capai" />
-                  <option name="mobileSdkAppId" value="1:799579207761:android:2c65c2e4fa9a426adee070" />
+                  <option name="appId" value="com.arnstudios.capai" />
+                  <option name="mobileSdkAppId" value="1:799579207761:android:f3a7a89b124385b2dee070" />
                   <option name="projectId" value="capai-2dff5" />
                   <option name="projectNumber" value="799579207761" />
                 </ConnectionSetting>

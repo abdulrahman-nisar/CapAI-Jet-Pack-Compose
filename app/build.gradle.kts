@@ -1,19 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.gms.google-services")
-    id("com.google.devtools.ksp")
-    id("com.google.dagger.hilt.android")
-    id("org.jetbrains.kotlin.plugin.serialization")
+    alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.google.services)
 }
 
 android {
-    namespace = "com.example.capai"
-    compileSdk = 36
+    namespace = "com.arnstudios.capai"
+    compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.example.capai"
+        applicationId = "com.arnstudios.capai"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -35,34 +34,40 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        }
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
 dependencies {
-    val room_version = "2.8.4"
-    implementation("androidx.room:room-runtime:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-    implementation("com.google.dagger:hilt-android:2.56.2")
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.play.services.ads)
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.room.compiler)
+    annotationProcessor(libs.room.compiler)
+    implementation(libs.hilt.android)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui)
-    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5")
-    implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-ai")
-    implementation("androidx.compose.material:material-icons-extended")
-    implementation("androidx.navigation3:navigation3-runtime:1.1.0-alpha02")
-    implementation("androidx.navigation3:navigation3-ui:1.1.0-alpha02")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
-    implementation("io.coil-kt:coil-compose:2.6.0")
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.compose.material3:material3")
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.appcheck.playintegrity)
+    implementation(libs.firebase.appcheck.debug)
+    implementation(libs.firebase.ai)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
