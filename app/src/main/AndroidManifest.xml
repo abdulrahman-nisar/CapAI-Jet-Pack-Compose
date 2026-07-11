@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".CapAIApplication"
+        android:name="com.arnstudios.capai.CapAIApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,7 +16,7 @@
         android:theme="@style/Theme.CapAi">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-3092242649828627~6620402757" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

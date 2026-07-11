@@ -1,8 +1,8 @@
-package com.arnstudios.capai.domain.repository
+package com.arnstudios.capshotai.domain.repository
 
 import android.net.Uri
-import com.arnstudios.capai.domain.model.CapAI
-import com.arnstudios.capai.domain.model.CaptionRequest
+import com.arnstudios.capshotai.domain.model.CapAI
+import com.arnstudios.capshotai.domain.model.CaptionRequest
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 

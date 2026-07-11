@@ -1,4 +1,4 @@
-package com.arnstudios.capai.ui.screen
+package com.arnstudios.capshotai.ui.screen
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
@@ -20,13 +20,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arnstudios.capai.ui.CapAiViewModel
-import com.arnstudios.capai.ui.screen.components.DeleteConfirmationDialog
-import com.arnstudios.capai.ui.screen.components.DrawerContent
-import com.arnstudios.capai.ui.screen.components.HistoryListItem
-import com.arnstudios.capai.ui.screen.components.ShimmerHistoryItem
-import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
-import com.arnstudios.capai.domain.model.CapAI
+import com.arnstudios.capshotai.ui.CapAiViewModel
+import com.arnstudios.capshotai.ui.screen.components.DeleteConfirmationDialog
+import com.arnstudios.capshotai.ui.screen.components.DrawerContent
+import com.arnstudios.capshotai.ui.screen.components.HistoryListItem
+import com.arnstudios.capshotai.ui.screen.components.ShimmerHistoryItem
+import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capshotai.domain.model.CapAI
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -108,7 +108,7 @@ fun HomeScreen(
                 TopAppBar(
                     title = {
                         Text(
-                            text = "CapAi",
+                            text = "Capshot AI: Photo Captions",
                             modifier = Modifier
                                 .fillMaxWidth(),
                             textAlign = TextAlign.Center,

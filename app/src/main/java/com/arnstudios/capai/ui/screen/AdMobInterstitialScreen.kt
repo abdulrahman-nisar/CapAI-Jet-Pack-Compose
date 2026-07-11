@@ -1,4 +1,4 @@
-package com.arnstudios.capai.ui.screen
+package com.arnstudios.capshotai.ui.screen
 
 import android.app.Activity
 import androidx.activity.compose.BackHandler
@@ -11,7 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.arnstudios.capai.ui.loading.BlobLoadingScreen
+import com.arnstudios.capshotai.ui.loading.BlobLoadingScreen
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
@@ -46,7 +46,7 @@ fun AdMobInterstitialScreen(
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(
             context,
-            "ca-app-pub-3940256099942544/1033173712", // Test Interstitial Ad ID
+            "ca-app-pub-3092242649828627/5345025700",
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {

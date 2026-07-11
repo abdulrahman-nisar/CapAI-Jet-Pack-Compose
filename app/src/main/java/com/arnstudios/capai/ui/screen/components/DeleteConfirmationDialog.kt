@@ -1,4 +1,4 @@
-package com.arnstudios.capai.ui.screen.components
+package com.arnstudios.capshotai.ui.screen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*

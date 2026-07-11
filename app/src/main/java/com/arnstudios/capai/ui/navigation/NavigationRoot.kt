@@ -1,4 +1,4 @@
-package com.arnstudios.capai.ui.navigation
+package com.arnstudios.capshotai.ui.navigation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -12,15 +12,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.arnstudios.capai.ui.CapAiViewModel
-import com.arnstudios.capai.ui.screen.AdMobInterstitialScreen
-import com.arnstudios.capai.ui.screen.AdMobRewardedScreen
-import com.arnstudios.capai.ui.screen.CaptionPreferencesScreen
-import com.arnstudios.capai.ui.screen.DetailsScreen
-import com.arnstudios.capai.ui.screen.HomeDetailsScreen
-import com.arnstudios.capai.ui.screen.HomeScreen
-import com.arnstudios.capai.ui.screen.OnboardingScreen
-import com.arnstudios.capai.ui.screen.SelectImageScreen
+import com.arnstudios.capshotai.ui.CapAiViewModel
+import com.arnstudios.capshotai.ui.screen.AdMobInterstitialScreen
+import com.arnstudios.capshotai.ui.screen.AdMobRewardedScreen
+import com.arnstudios.capshotai.ui.screen.CaptionPreferencesScreen
+import com.arnstudios.capshotai.ui.screen.DetailsScreen
+import com.arnstudios.capshotai.ui.screen.HomeDetailsScreen
+import com.arnstudios.capshotai.ui.screen.HomeScreen
+import com.arnstudios.capshotai.ui.screen.OnboardingScreen
+import com.arnstudios.capshotai.ui.screen.SelectImageScreen
 
 @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 @Composable
@@ -48,7 +48,7 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                 OnboardingScreen(
                     onFinish = {
                         viewModel.setOnboardingCompleted()
-                        backStack.removeLast()
+                        backStack.removeAt(backStack.lastIndex)
                         backStack.add(Route.HomeScreen)
                     }
                 )
@@ -68,7 +68,7 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                 AdMobInterstitialScreen(
                     itemIndex = route.itemIndex,
                     onAdDismissed = { index ->
-                        backStack.removeLast()
+                        backStack.removeAt(backStack.lastIndex)
                         backStack.add(Route.HomeDetailsScreen(index))
                     }
                 )
@@ -79,7 +79,7 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                     HomeDetailsScreen(
                         capAi = historyList[route.itemIndex],
                         onBackArrowClick = {
-                            backStack.removeLast()
+                            backStack.removeAt(backStack.lastIndex)
                         }
                     )
                 }
@@ -88,7 +88,7 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                  SelectImageScreen(
                      viewModel = viewModel,
                      onBackArrowClick = {
-                            backStack.removeLast()
+                            backStack.removeAt(backStack.lastIndex)
                      },
                      onSucessfulImagePick = {
                             backStack.add(Route.CaptionPreferencesScreen)
@@ -99,7 +99,7 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                 CaptionPreferencesScreen(
                     viewModel = viewModel,
                     onBackArrowClick = {
-                        backStack.removeLast()
+                        backStack.removeAt(backStack.lastIndex)
                     },
                     onGenerateCaptionClick = {
                         backStack.add(Route.AdMobRewardedScreen(it))
@@ -110,7 +110,7 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                 AdMobRewardedScreen(
                     selectedLength = route.selectedLength,
                     onAdDismissed = { length ->
-                        backStack.removeLast()
+                        backStack.removeAt(backStack.lastIndex)
                         backStack.add(Route.DetailsScreen(length))
                     }
                 )
@@ -120,12 +120,12 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                     viewModel = viewModel,
                     len.selectedLength,
                     onBackArrowClick = {
-                        backStack.removeLast()
-                        backStack.removeLast()
-                        backStack.removeLast()
+                        backStack.removeAt(backStack.lastIndex)
+                        backStack.removeAt(backStack.lastIndex)
+                        backStack.removeAt(backStack.lastIndex)
                     },
                     onIsSuccessFalse = {
-                        backStack.removeLast()
+                        backStack.removeAt(backStack.lastIndex)
                     }
                 )
             }

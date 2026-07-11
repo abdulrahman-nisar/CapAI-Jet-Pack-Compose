@@ -1,4 +1,4 @@
-package com.arnstudios.capai.ui.theme
+package com.arnstudios.capshotai.ui.theme
 
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color

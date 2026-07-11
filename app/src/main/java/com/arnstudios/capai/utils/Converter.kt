@@ -1,4 +1,4 @@
-package com.arnstudios.capai.utils
+package com.arnstudios.capshotai.utils
 
 import android.content.Context
 import android.graphics.Bitmap

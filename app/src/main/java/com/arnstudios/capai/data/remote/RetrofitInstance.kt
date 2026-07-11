@@ -1,4 +1,4 @@
-package com.arnstudios.capai.data.remote
+package com.arnstudios.capshotai.data.remote
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

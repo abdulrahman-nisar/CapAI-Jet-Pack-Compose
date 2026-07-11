@@ -1,6 +1,5 @@
-package com.arnstudios.capai.ui.screen.components
+package com.arnstudios.capshotai.ui.screen.components
 
-import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -20,17 +18,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arnstudios.capai.R
-import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capshotai.R
+import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
 
 @Composable
 fun DrawerContent() {
@@ -75,7 +71,7 @@ fun DrawerContent() {
                 Spacer(Modifier.height(16.dp))
 
                 Text(
-                    text = "CapAi",
+                    text = "Capshot AI: Photo Captions",
                     color = Color.White,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold

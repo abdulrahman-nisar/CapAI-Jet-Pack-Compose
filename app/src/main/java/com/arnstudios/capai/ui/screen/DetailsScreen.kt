@@ -1,4 +1,4 @@
-package com.arnstudios.capai.ui.screen
+package com.arnstudios.capshotai.ui.screen
 
 import android.annotation.SuppressLint
 import android.widget.Toast
@@ -61,13 +61,13 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import coil.compose.AsyncImage
-import com.arnstudios.capai.R
-import com.arnstudios.capai.domain.model.Length
-import com.arnstudios.capai.ui.CapAiViewModel
-import com.arnstudios.capai.ui.loading.CaptionGenerationLoadingScreen
-import com.arnstudios.capai.ui.screen.components.ErrorDialog
-import com.arnstudios.capai.ui.screen.components.ShareImageAndCaption
-import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capshotai.R
+import com.arnstudios.capshotai.domain.model.Length
+import com.arnstudios.capshotai.ui.CapAiViewModel
+import com.arnstudios.capshotai.ui.loading.CaptionGenerationLoadingScreen
+import com.arnstudios.capshotai.ui.screen.components.ErrorDialog
+import com.arnstudios.capshotai.ui.screen.components.ShareImageAndCaption
+import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
 import kotlinx.coroutines.launch
 
 @SuppressLint("CoroutineCreationDuringComposition")

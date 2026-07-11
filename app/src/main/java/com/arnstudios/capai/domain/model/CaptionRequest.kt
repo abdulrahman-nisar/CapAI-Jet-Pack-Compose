@@ -1,4 +1,4 @@
-package com.arnstudios.capai.domain.model
+package com.arnstudios.capshotai.domain.model
 
 import com.google.gson.annotations.SerializedName
 

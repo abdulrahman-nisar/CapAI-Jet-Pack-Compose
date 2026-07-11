@@ -1,15 +1,15 @@
-package com.arnstudios.capai.ui
+package com.arnstudios.capshotai.ui
 
 import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.arnstudios.capai.data.local.PrefsManager
-import com.arnstudios.capai.domain.model.CapAI
-import com.arnstudios.capai.domain.model.CaptionResult
-import com.arnstudios.capai.domain.model.Length
-import com.arnstudios.capai.domain.usecase.GetImageCapUseCase
-import com.arnstudios.capai.domain.usecase.RoomDatabaseOperationsUseCase
+import com.arnstudios.capshotai.data.local.PrefsManager
+import com.arnstudios.capshotai.domain.model.CapAI
+import com.arnstudios.capshotai.domain.model.CaptionResult
+import com.arnstudios.capshotai.domain.model.Length
+import com.arnstudios.capshotai.domain.usecase.GetImageCapUseCase
+import com.arnstudios.capshotai.domain.usecase.RoomDatabaseOperationsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

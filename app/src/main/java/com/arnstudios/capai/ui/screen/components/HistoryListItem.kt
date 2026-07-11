@@ -1,4 +1,4 @@
-package com.arnstudios.capai.ui.screen.components
+package com.arnstudios.capshotai.ui.screen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.arnstudios.capai.domain.model.CapAI
+import com.arnstudios.capshotai.domain.model.CapAI
 
 @Composable
 fun HistoryListItem(

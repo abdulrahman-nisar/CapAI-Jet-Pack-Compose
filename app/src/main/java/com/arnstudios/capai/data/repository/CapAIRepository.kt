@@ -1,15 +1,13 @@
-package com.arnstudios.capai.data.repository
+package com.arnstudios.capshotai.data.repository
 
-import android.content.Context
 import android.net.Uri
 import androidx.core.net.toUri
-import com.arnstudios.capai.data.local.dao.CapAIDao
-import com.arnstudios.capai.data.local.entity.CaptionEntity
-import com.arnstudios.capai.data.remote.OpenaiApiService
-import com.arnstudios.capai.domain.model.CapAI
-import com.arnstudios.capai.domain.model.CaptionRequest
-import com.arnstudios.capai.domain.model.Length
-import com.arnstudios.capai.domain.repository.CapAiRepository
+import com.arnstudios.capshotai.data.local.dao.CapAIDao
+import com.arnstudios.capshotai.data.local.entity.CaptionEntity
+import com.arnstudios.capshotai.data.remote.OpenaiApiService
+import com.arnstudios.capshotai.domain.model.CapAI
+import com.arnstudios.capshotai.domain.model.CaptionRequest
+import com.arnstudios.capshotai.domain.repository.CapAiRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import retrofit2.Response

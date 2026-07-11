@@ -1,4 +1,4 @@
-package com.arnstudios.capai
+package com.arnstudios.capshotai
 
 import org.junit.Test
 

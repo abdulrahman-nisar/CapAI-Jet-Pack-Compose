@@ -1,10 +1,10 @@
-package com.arnstudios.capai.data.local.dao
+package com.arnstudios.capshotai.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.arnstudios.capai.data.local.entity.CaptionEntity
+import com.arnstudios.capshotai.data.local.entity.CaptionEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
