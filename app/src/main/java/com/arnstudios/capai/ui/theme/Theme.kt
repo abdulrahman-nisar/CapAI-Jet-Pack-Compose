@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.theme
+package com.arnstudios.capai.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

@@ -1,13 +1,13 @@
-package com.arnstudios.capshotai.domain.usecase
+package com.arnstudios.capai.domain.usecase
 
 import android.content.Context
 import android.net.Uri
-import com.arnstudios.capshotai.domain.model.CapAI
-import com.arnstudios.capshotai.domain.model.CaptionRequest
-import com.arnstudios.capshotai.domain.model.Length
-import com.arnstudios.capshotai.domain.repository.CapAiRepository
-import com.arnstudios.capshotai.utils.toBase64
-import com.arnstudios.capshotai.utils.toBitmap
+import com.arnstudios.capai.domain.model.CapAI
+import com.arnstudios.capai.domain.model.CaptionRequest
+import com.arnstudios.capai.domain.model.Length
+import com.arnstudios.capai.domain.repository.CapAiRepository
+import com.arnstudios.capai.utils.toBase64
+import com.arnstudios.capai.utils.toBitmap
 import javax.inject.Inject
 
 class GetImageCapUseCase @Inject constructor(

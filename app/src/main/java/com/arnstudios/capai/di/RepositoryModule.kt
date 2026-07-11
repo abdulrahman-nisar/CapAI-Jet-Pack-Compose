@@ -1,7 +1,7 @@
-package com.arnstudios.capshotai.di
+package com.arnstudios.capai.di
 
-import com.arnstudios.capshotai.data.repository.CapAIRepositoryImpl
-import com.arnstudios.capshotai.domain.repository.CapAiRepository
+import com.arnstudios.capai.data.repository.CapAIRepositoryImpl
+import com.arnstudios.capai.domain.repository.CapAiRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

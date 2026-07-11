@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.screen
+package com.arnstudios.capai.ui.screen
 
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -21,8 +21,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arnstudios.capshotai.ui.CapAiViewModel
-import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capai.ui.CapAiViewModel
+import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -109,7 +109,7 @@ fun SelectImageScreen(
             ) {
                 Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
                     Image(
-                        painter = painterResource(id = com.arnstudios.capshotai.R.drawable.upload),
+                        painter = painterResource(id = com.arnstudios.capai.R.drawable.upload),
                         contentDescription = "No Image Selected",
                         modifier = Modifier.size(150.dp)
                     )
@@ -153,7 +153,7 @@ fun SelectImageScreen(
                 )
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(painterResource(com.arnstudios.capshotai.R.drawable.upload), contentDescription = null, modifier = Modifier.size(24.dp))
+                    Icon(painterResource(com.arnstudios.capai.R.drawable.upload), contentDescription = null, modifier = Modifier.size(24.dp))
                     Spacer(Modifier.width(8.dp))
                     Text(
                         text = "Choose from Gallery",

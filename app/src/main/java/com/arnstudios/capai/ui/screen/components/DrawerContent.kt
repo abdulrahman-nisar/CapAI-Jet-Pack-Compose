@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.screen.components
+package com.arnstudios.capai.ui.screen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -25,8 +25,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arnstudios.capshotai.R
-import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capai.BuildConfig
+import com.arnstudios.capai.R
+import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 
 @Composable
 fun DrawerContent() {
@@ -71,7 +72,7 @@ fun DrawerContent() {
                 Spacer(Modifier.height(16.dp))
 
                 Text(
-                    text = "Capshot AI: Photo Captions",
+                    text = "Capshot AI",
                     color = Color.White,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold
@@ -124,7 +125,7 @@ fun DrawerContent() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Version 1.0.0",
+                text = BuildConfig.VERSION_NAME,
                 fontSize = 12.sp,
                 color = Color.Gray,
                 fontWeight = FontWeight.Medium

@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.screen.components
+package com.arnstudios.capai.ui.screen.components
 
 import android.content.Context
 import android.content.Intent

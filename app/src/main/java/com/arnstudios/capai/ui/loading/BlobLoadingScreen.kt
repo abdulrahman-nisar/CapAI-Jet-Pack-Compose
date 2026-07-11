@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.loading
+package com.arnstudios.capai.ui.loading
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -27,7 +27,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 import kotlin.math.cos
 import kotlin.math.sin
 

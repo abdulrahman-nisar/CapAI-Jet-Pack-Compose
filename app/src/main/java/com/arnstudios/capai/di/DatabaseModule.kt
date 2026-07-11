@@ -1,8 +1,8 @@
-package com.arnstudios.capshotai.di
+package com.arnstudios.capai.di
 
 import android.content.Context
 import androidx.room.Room
-import com.arnstudios.capshotai.data.local.database.CapAIDataBase
+import com.arnstudios.capai.data.local.database.CapAIDataBase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.navigation
+package com.arnstudios.capai.ui.navigation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -12,15 +12,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.arnstudios.capshotai.ui.CapAiViewModel
-import com.arnstudios.capshotai.ui.screen.AdMobInterstitialScreen
-import com.arnstudios.capshotai.ui.screen.AdMobRewardedScreen
-import com.arnstudios.capshotai.ui.screen.CaptionPreferencesScreen
-import com.arnstudios.capshotai.ui.screen.DetailsScreen
-import com.arnstudios.capshotai.ui.screen.HomeDetailsScreen
-import com.arnstudios.capshotai.ui.screen.HomeScreen
-import com.arnstudios.capshotai.ui.screen.OnboardingScreen
-import com.arnstudios.capshotai.ui.screen.SelectImageScreen
+import com.arnstudios.capai.ui.CapAiViewModel
+import com.arnstudios.capai.ui.screen.AdMobInterstitialScreen
+import com.arnstudios.capai.ui.screen.AdMobRewardedScreen
+import com.arnstudios.capai.ui.screen.CaptionPreferencesScreen
+import com.arnstudios.capai.ui.screen.DetailsScreen
+import com.arnstudios.capai.ui.screen.HomeDetailsScreen
+import com.arnstudios.capai.ui.screen.HomeScreen
+import com.arnstudios.capai.ui.screen.OnboardingScreen
+import com.arnstudios.capai.ui.screen.SelectImageScreen
 
 @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 @Composable

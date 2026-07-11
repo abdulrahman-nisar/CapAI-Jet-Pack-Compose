@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.data.local
+package com.arnstudios.capai.data.local
 
 import android.content.Context
 import android.content.SharedPreferences

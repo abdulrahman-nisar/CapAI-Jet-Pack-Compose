@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.theme
+package com.arnstudios.capai.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

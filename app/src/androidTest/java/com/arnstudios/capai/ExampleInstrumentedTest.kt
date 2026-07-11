@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai
+package com.arnstudios.capai
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

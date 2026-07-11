@@ -1,7 +1,7 @@
-package com.arnstudios.capshotai.di
+package com.arnstudios.capai.di
 
-import com.arnstudios.capshotai.data.remote.OpenaiApiService
-import com.arnstudios.capshotai.data.remote.RetrofitInstance
+import com.arnstudios.capai.data.remote.OpenaiApiService
+import com.arnstudios.capai.data.remote.RetrofitInstance
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

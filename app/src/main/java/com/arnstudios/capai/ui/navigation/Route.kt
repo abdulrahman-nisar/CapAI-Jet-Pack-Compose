@@ -1,7 +1,7 @@
-package com.arnstudios.capshotai.ui.navigation
+package com.arnstudios.capai.ui.navigation
 
 import androidx.navigation3.runtime.NavKey
-import com.arnstudios.capshotai.domain.model.Length
+import com.arnstudios.capai.domain.model.Length
 import kotlinx.serialization.Serializable
 
 @Serializable

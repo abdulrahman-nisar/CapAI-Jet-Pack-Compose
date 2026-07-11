@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.loading
+package com.arnstudios.capai.ui.loading
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.LinearEasing
@@ -33,7 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 import kotlinx.coroutines.delay
 import kotlin.math.sin
 

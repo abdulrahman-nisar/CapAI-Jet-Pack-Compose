@@ -1,7 +1,7 @@
-package com.arnstudios.capshotai.data.remote
+package com.arnstudios.capai.data.remote
 
-import com.arnstudios.capshotai.domain.model.CapAI
-import com.arnstudios.capshotai.domain.model.CaptionRequest
+import com.arnstudios.capai.domain.model.CapAI
+import com.arnstudios.capai.domain.model.CaptionRequest
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST

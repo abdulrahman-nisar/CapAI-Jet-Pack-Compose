@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.screen
+package com.arnstudios.capai.ui.screen
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
@@ -57,9 +57,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import coil.compose.AsyncImage
-import com.arnstudios.capshotai.domain.model.CapAI
-import com.arnstudios.capshotai.ui.screen.components.ShareImageAndCaption
-import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capai.domain.model.CapAI
+import com.arnstudios.capai.ui.screen.components.ShareImageAndCaption
+import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -283,15 +283,15 @@ fun HomeDetailsScreen(
                         ) {
                              Icon(
                                 painter = when (platform) {
-                                    "Instagram" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.instagram_foreground)
-                                    "Facebook" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.facebook_foreground)
-                                    "Twitter" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.twitter_foreground)
-                                    "Pinterest" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.pinterest_foreground)
-                                    "LinkedIn" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.linkldin_foreground)
-                                    "Threads" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.threads_foreground)
-                                    "Snapchat" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.snapchat_foreground)
-                                    "TikTok" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.tiktok_foreground)
-                                    else -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capshotai.R.mipmap.instagram_foreground)
+                                    "Instagram" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.instagram_foreground)
+                                    "Facebook" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.facebook_foreground)
+                                    "Twitter" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.twitter_foreground)
+                                    "Pinterest" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.pinterest_foreground)
+                                    "LinkedIn" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.linkldin_foreground)
+                                    "Threads" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.threads_foreground)
+                                    "Snapchat" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.snapchat_foreground)
+                                    "TikTok" -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.tiktok_foreground)
+                                    else -> androidx.compose.ui.res.painterResource(id = com.arnstudios.capai.R.mipmap.instagram_foreground)
                                 },
                                 contentDescription = "$platform Icon",
                                 modifier = Modifier.size(28.dp),

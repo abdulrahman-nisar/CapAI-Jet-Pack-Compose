@@ -1,8 +1,8 @@
-package com.arnstudios.capshotai.domain.usecase
+package com.arnstudios.capai.domain.usecase
 
 import android.net.Uri
-import com.arnstudios.capshotai.domain.model.CapAI
-import com.arnstudios.capshotai.domain.repository.CapAiRepository
+import com.arnstudios.capai.domain.model.CapAI
+import com.arnstudios.capai.domain.repository.CapAiRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

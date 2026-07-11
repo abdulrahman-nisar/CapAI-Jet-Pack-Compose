@@ -1,7 +1,7 @@
-package com.arnstudios.capshotai.di
+package com.arnstudios.capai.di
 
 import android.content.Context
-import com.arnstudios.capshotai.data.local.PrefsManager
+import com.arnstudios.capai.data.local.PrefsManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

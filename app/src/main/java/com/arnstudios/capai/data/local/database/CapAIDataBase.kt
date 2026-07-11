@@ -1,9 +1,9 @@
-package com.arnstudios.capshotai.data.local.database
+package com.arnstudios.capai.data.local.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.arnstudios.capshotai.data.local.dao.CapAIDao
-import com.arnstudios.capshotai.data.local.entity.CaptionEntity
+import com.arnstudios.capai.data.local.dao.CapAIDao
+import com.arnstudios.capai.data.local.entity.CaptionEntity
 
 @Database(
     entities = [CaptionEntity::class],

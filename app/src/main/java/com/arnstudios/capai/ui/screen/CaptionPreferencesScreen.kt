@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.screen
+package com.arnstudios.capai.ui.screen
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
@@ -20,14 +20,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.arnstudios.capshotai.domain.model.Length
-import com.arnstudios.capshotai.ui.CapAiViewModel
-import com.arnstudios.capshotai.ui.screen.components.ErrorDialog
-import com.arnstudios.capshotai.ui.theme.ScreenBackgroundGradient
-import com.arnstudios.capshotai.utils.NetworkUtils
+import com.arnstudios.capai.domain.model.Length
+import com.arnstudios.capai.ui.CapAiViewModel
+import com.arnstudios.capai.ui.screen.components.ErrorDialog
+import com.arnstudios.capai.ui.theme.ScreenBackgroundGradient
+import com.arnstudios.capai.utils.NetworkUtils
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.saveable.rememberSaveable
-import com.arnstudios.capshotai.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -119,7 +118,7 @@ fun CaptionPreferencesScreen(
                 } else {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                          Image(
-                            painter = painterResource(id = R.drawable.upload),
+                            painter = painterResource(id = com.arnstudios.capai.R.drawable.upload),
                             contentDescription = "No image",
                             modifier = Modifier.size(120.dp),
                             contentScale = ContentScale.Fit

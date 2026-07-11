@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.ui.screen
+package com.arnstudios.capai.ui.screen
 
 import android.app.Activity
 import androidx.activity.compose.BackHandler
@@ -11,8 +11,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.arnstudios.capshotai.domain.model.Length
-import com.arnstudios.capshotai.ui.loading.BlobLoadingScreen
+import com.arnstudios.capai.domain.model.Length
+import com.arnstudios.capai.ui.loading.BlobLoadingScreen
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback

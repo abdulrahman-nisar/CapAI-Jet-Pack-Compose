@@ -1,4 +1,4 @@
-package com.arnstudios.capshotai.data.local.entity
+package com.arnstudios.capai.data.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
