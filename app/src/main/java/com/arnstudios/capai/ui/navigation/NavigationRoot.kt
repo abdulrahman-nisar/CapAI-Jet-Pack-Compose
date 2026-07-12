@@ -60,7 +60,12 @@ fun NavigationRoot(viewModel: CapAiViewModel) {
                         backStack.add(Route.SelectImageScreen)
                     },
                     onHistoryItemClick = { index ->
-                        backStack.add(Route.AdMobInterstitialScreen(index))
+                        if(viewModel.onHistoryItemOpenedCount == 2){
+                            backStack.add(Route.AdMobInterstitialScreen(index))
+                        }else{
+                            backStack.add(Route.HomeDetailsScreen(index))
+                        }
+                        viewModel.setOnHistoryItemOpenedCount()
                     }
                 )
             }

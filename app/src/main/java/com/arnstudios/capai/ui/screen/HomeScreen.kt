@@ -219,7 +219,10 @@ fun HomeScreen(
                                 itemsIndexed(historyList) { index, item ->
                                     HistoryListItem(
                                         capAI = item,
-                                        onClick = { onHistoryItemClick(index) },
+                                        onClick = {
+                                            onHistoryItemClick(index)
+
+                                                  },
                                         onDelete = {
                                             itemToDelete = item
                                         }

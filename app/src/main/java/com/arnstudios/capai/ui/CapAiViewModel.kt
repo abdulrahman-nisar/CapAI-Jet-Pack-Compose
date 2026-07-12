@@ -27,10 +27,21 @@ class CapAiViewModel @Inject constructor(
     var result = _result.asStateFlow()
 
     var isOnboardingCompleted = _prefsManager.isOnboardingCompleted
+    var onHistoryItemOpenedCount = _prefsManager.onHistoryItemOpenedCount
 
     fun setOnboardingCompleted() {
         _prefsManager.isOnboardingCompleted = true
         isOnboardingCompleted = true
+    }
+
+    fun setOnHistoryItemOpenedCount() {
+        if(onHistoryItemOpenedCount == 2){
+            _prefsManager.onHistoryItemOpenedCount = 0
+            onHistoryItemOpenedCount = 0
+        }else{
+            _prefsManager.onHistoryItemOpenedCount++
+            onHistoryItemOpenedCount = _prefsManager.onHistoryItemOpenedCount
+        }
     }
 
     var imageUri = MutableStateFlow<Uri?>(null)
